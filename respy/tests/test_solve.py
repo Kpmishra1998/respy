@@ -226,7 +226,6 @@ def test_create_state_space_vs_specialized_kw97(model):
         ]
 
         for index in indexer.keys():
-
             if index[0] == period:
                 assert list(index) in indices_old
 

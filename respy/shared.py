@@ -493,7 +493,6 @@ def calculate_expected_value_functions(
     expected_value_functions[0] = 0
 
     for i in range(n_draws):
-
         max_value_functions = 0
 
         for j in range(n_choices):

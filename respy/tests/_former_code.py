@@ -72,7 +72,6 @@ def _create_state_space_kw94(n_periods, n_types, edu_starts, edu_max):
 
     # Construct state space by periods
     for period in range(n_periods):
-
         # Build periodic indexer.
         max_edu_starts = max(edu_starts)
         dim_edu = min(max_edu_starts + period, edu_max) + 1
@@ -82,10 +81,8 @@ def _create_state_space_kw94(n_periods, n_types, edu_starts, edu_max):
 
         # Loop over all unobserved types
         for type_ in range(n_types):
-
             # Loop overall all initial levels of schooling
             for edu_start in edu_starts:
-
                 # For occupations and education it is necessary to loop over period
                 # + 1 as zero has to be included if it is never this choice and period
                 # + 1 if it is always the same choice.
@@ -95,22 +92,17 @@ def _create_state_space_kw94(n_periods, n_types, edu_starts, edu_max):
 
                 # Loop over all admissible work experiences for Occupation A
                 for exp_a in range(period + 1):
-
                     # Loop over all admissible work experience for Occupation B
                     for exp_b in range(period + 1 - exp_a):
-
                         # Loop over all admissible additional education levels
                         for edu_add in range(
                             min(period + 1 - exp_a - exp_b, edu_max + 1 - edu_start)
                         ):
-
                             # Loop over all admissible values for the lagged activity:
                             # (1) Occupation A, (2) Occupation B, (3) Education, and (4)
                             # Home.
                             for lagged_choice in range(4):
-
                                 if period > 0:
-
                                     # (0, 1) Whenever an agent has only worked in
                                     # Occupation A, then the lagged choice cannot be
                                     # anything other than one.
@@ -231,7 +223,6 @@ def _create_state_space_kw97_base(n_periods, n_types, edu_starts, edu_max):
 
     # Construct state space by periods
     for period in range(n_periods):
-
         # Build periodic indexer.
         max_edu_starts = max(edu_starts)
         dim_edu = min(max_edu_starts + period, edu_max) + 1
@@ -241,10 +232,8 @@ def _create_state_space_kw97_base(n_periods, n_types, edu_starts, edu_max):
 
         # Loop over all unobserved types
         for type_ in range(n_types):
-
             # Loop overall all initial levels of schooling
             for edu_start in edu_starts:
-
                 # For occupations and education it is necessary to loop over period
                 # + 1 as zero has to be included if it is never this choice and period
                 # + 1 if it is always the same choice.
@@ -254,13 +243,10 @@ def _create_state_space_kw97_base(n_periods, n_types, edu_starts, edu_max):
 
                 # Loop over all admissible work experiences for Occupation A
                 for exp_a in range(period + 1):
-
                     # Loop over all admissible work experience for Occupation B
                     for exp_b in range(period + 1 - exp_a):
-
                         # Loop over all admissible work experience for Occupation B
                         for exp_mil in range(period + 1 - exp_a - exp_b):
-
                             # Loop over all admissible additional education levels
                             for edu_add in range(
                                 min(
@@ -268,7 +254,6 @@ def _create_state_space_kw97_base(n_periods, n_types, edu_starts, edu_max):
                                     edu_max + 1 - edu_start,
                                 )
                             ):
-
                                 # Continue if state still exist. This condition is
                                 # only triggered by multiple initial levels of
                                 # education.
@@ -336,7 +321,6 @@ def _create_state_space_kw97_extended(n_periods, n_types, edu_starts, edu_max):
 
     # Construct state space by periods
     for period in range(n_periods):
-
         # Build periodic indexer.
         max_edu_starts = max(edu_starts)
         dim_edu = min(max_edu_starts + period, edu_max) + 1
@@ -346,10 +330,8 @@ def _create_state_space_kw97_extended(n_periods, n_types, edu_starts, edu_max):
 
         # Loop over all unobserved types
         for type_ in range(n_types):
-
             # Loop overall all initial levels of schooling
             for edu_start in edu_starts:
-
                 # For occupations and education it is necessary to loop over period
                 # + 1 as zero has to be included if it is never this choice and period
                 # + 1 if it is always the same choice.
@@ -359,13 +341,10 @@ def _create_state_space_kw97_extended(n_periods, n_types, edu_starts, edu_max):
 
                 # Loop over all admissible work experiences for Occupation A
                 for exp_a in range(period + 1):
-
                     # Loop over all admissible work experience for Occupation B
                     for exp_b in range(period + 1 - exp_a):
-
                         # Loop over all admissible work experience for Occupation B
                         for exp_mil in range(period + 1 - exp_a - exp_b):
-
                             # Loop over all admissible additional education levels
                             for edu_add in range(
                                 min(
@@ -373,14 +352,11 @@ def _create_state_space_kw97_extended(n_periods, n_types, edu_starts, edu_max):
                                     edu_max + 1 - edu_start,
                                 )
                             ):
-
                                 # Loop over all admissible values for the lagged
                                 # activity: (1) Occupation A, (2) Occupation B, (3)
                                 # Military, (4) Education, and (5) Home.
                                 for lagged_choice in range(5):
-
                                     if period > 0:
-
                                         # (0, 1) Whenever an agent has only worked in
                                         # Occupation A, then the lagged choice cannot be
                                         # anything other than one.

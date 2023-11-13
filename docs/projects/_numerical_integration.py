@@ -70,7 +70,6 @@ def get_rmse_rate(df, comparison_rates, methods):
         - figure
     """
     for measure in ["absolute", "relative"]:
-
         fig, ax = plt.subplots(1, 1, figsize=(6.5, 4.5))
 
         for m in methods:

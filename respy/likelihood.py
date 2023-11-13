@@ -460,7 +460,6 @@ def _simulate_log_probability_of_individuals_observed_choice(
     smoothed_value_functions = np.empty(n_choices)
 
     for i in range(n_draws):
-
         for j in range(n_choices):
             value_function, _ = aggregate_keane_wolpin_utility(
                 wages[j], nonpec[j], continuation_values[j], draws[i, j], delta
@@ -553,7 +552,6 @@ def _process_estimation_data(df, state_space, optim_paras, options):
 def _update_optim_paras_with_initial_experience_levels(optim_paras, df):
     """Adjust the initial experience levels in optim_paras from the data."""
     for choice in optim_paras["choices_w_exp"]:
-
         # Adjust initial experience levels for all choices with experiences.
         init_exp_data = np.sort(
             df.query("Period == 0")[f"Experience_{choice.title()}"].unique()

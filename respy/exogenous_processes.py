@@ -39,7 +39,6 @@ def compute_transition_probabilities(
     # Compute the probabilities for every exogenous process.
     probabilities = []
     for exog_proc in exogenous_processes:
-
         # Create the dot product of covariates and parameters.
         x_betas = [
             pandas_dot(states[params.index], params)
